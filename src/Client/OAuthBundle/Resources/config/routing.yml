@@ -1,0 +1,15 @@
+client_o_auth_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ClientOAuthBundle:Default:index }
+
+client_o_profil_hompage:
+  path: /profil
+  defaults:  { _controller: ClientOAuthBundle:Clients:index }
+
+client_o_article_hompage:
+   path: /api/articles
+   defaults:  { _controller: ClientOAuthBundle:Api:index }
+
+auth:
+  resource: "@ClientOAuthBundle/Controller/AuthController.php"
+  type: annotation

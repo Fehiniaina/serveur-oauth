@@ -1,0 +1,30 @@
+client_o_auth:
+    resource: "@ClientOAuthBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_oauth_server_token:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
+
+fos_oauth_server_authorize:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/authorize.xml"
+
+acme_oauth_server_auth_login:
+    pattern:  /oauth/v2/auth_login
+    defaults: { _controller: ServerOAuthBundle:Security:login }
+
+acme_oauth_server_auth_login_check:
+    pattern:  /oauth/v2/auth_login_check
+    defaults: { _controller: ServerOAuthBundle:Security:loginCheck }
+
+client_o_user_hompage:
+   path: /api/user
+   defaults:  { _controller: ClientOAuthBundle:Api:user }
+
+homepage:
+  path: /
+  defaults: { _controller: ClientOAuthBundle:Default:index }
+
+
+redirect_page_authentification:
+   path: /redirectPage
+   defaults:  { _controller: ClientOAuthBundle:Clients:login }
